@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AdUnit } from './components/index/AdUnit';
 
 @Injectable({
   providedIn: 'root'
