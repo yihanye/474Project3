@@ -11,6 +11,8 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { AdunitService } from './adunit.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { MybookComponent } from './components/mybook/mybook.component';
 
 const routes: Routes = [
   {
@@ -22,8 +24,12 @@ const routes: Routes = [
     component: EditComponent
   },
   {
-    path: 'index',
+    path: 'all',
     component: IndexComponent
+  },
+  {
+    path: 'mybook',
+    component: MybookComponent
   }
 ];
 
@@ -33,7 +39,9 @@ const routes: Routes = [
     AppComponent,
     CreateComponent,
     IndexComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent,
+    MybookComponent
   ],
   imports: [
     BrowserModule,

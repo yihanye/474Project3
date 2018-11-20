@@ -10,8 +10,9 @@ export class AdunitService {
 
   constructor(private http: HttpClient) { }
 
-  addAdUnit(unit_course, unit_name, unit_price) {
+  addAdUnit(email, unit_course, unit_name, unit_price) {
     const obj = {
+      email: email,
       unit_course: unit_course,
       unit_name: unit_name,
       unit_price: unit_price
@@ -23,7 +24,12 @@ export class AdunitService {
     return this
            .http
            .get(`${this.uri}`);
-}
+
+  }
+  
+  getMyBook(email){
+    return this.http.get(`${this.uri}/email/${email}`);
+  }
 
   editAdUnit(id) {
   return this

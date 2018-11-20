@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for AdUnits
 let AdUnit = new Schema({
+  email:{
+    type: String
+  },
   unit_course:{
     type: String
   },

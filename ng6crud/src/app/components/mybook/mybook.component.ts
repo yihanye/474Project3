@@ -3,14 +3,13 @@ import { AdUnit } from './AdUnit';
 import { AdunitService } from '../../adunit.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-   
-@Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
-})
-export class IndexComponent implements OnInit {
 
+@Component({
+  selector: 'app-mybook',
+  templateUrl: './mybook.component.html',
+  styleUrls: ['./mybook.component.css']
+})
+export class MybookComponent implements OnInit {
   adunits: AdUnit[];
 
   constructor(private adunitservice: AdunitService,private route: ActivatedRoute,) { }
@@ -29,3 +28,4 @@ export class IndexComponent implements OnInit {
     });
   }
 }
+  
