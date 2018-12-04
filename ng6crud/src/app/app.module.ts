@@ -13,6 +13,7 @@ import { AdunitService } from './adunit.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { MybookComponent } from './components/mybook/mybook.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,14 @@ const routes: Routes = [
   {
     path: 'mybook',
     component: MybookComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
@@ -41,7 +50,8 @@ const routes: Routes = [
     IndexComponent,
     EditComponent,
     LoginComponent,
-    MybookComponent
+    MybookComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

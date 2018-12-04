@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class AdunitService {
 
   uri = 'http://localhost:4000/adunits';
+  reg = 'http://localhost:3000/api/auth';
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +22,39 @@ export class AdunitService {
         .subscribe(res => console.log('Done'));
   }
   getAdUnits() {
-    return this
-           .http
-           .get(`${this.uri}`);
+    return this.http.get(`${this.uri}`);
 
+  }
+
+  addUser(email, firstName, lastName, password) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    const obj = {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      password: password,
+      clientid: "webpage"
+    };
+    this.http.post(`${this.reg}/register`, obj, httpOptions).subscribe(res => console.log('Registered'));
+  }
+
+  login(email, password) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    console.log("in adunit.service.ts addUser func")
+    const obj = {
+      email: email,
+      password: password,
+      clientid: "webpage"
+    };
+    this.http.post(`${this.reg}/login`, obj, httpOptions).subscribe(res => console.log('Done'));
   }
   
   getMyBook(email){

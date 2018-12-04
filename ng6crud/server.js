@@ -1,11 +1,11 @@
 const express = require('express'),
+    app = express();
     path = require('path'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     mongoose = require('mongoose'),
     config = require('./config/DB');
 
-    const app = express();
 
     mongoose.Promise = global.Promise;
     mongoose.connect(config.DB).then(
