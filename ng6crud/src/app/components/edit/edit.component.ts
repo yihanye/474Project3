@@ -31,7 +31,7 @@ export class EditComponent implements OnInit {
       updateAdUnit2(unit_course,unit_name, unit_price) {
         this.route.params.subscribe(params => {
            this.adunitservice.updateAdUnit(unit_course,unit_name,unit_price, params['id']);
-           this.router.navigate(['index']);
+           this.router.navigate(['all']);
       });
      }
 

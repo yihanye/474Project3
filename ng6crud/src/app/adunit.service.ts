@@ -48,7 +48,6 @@ export class AdunitService {
         'Content-Type':  'application/json'
       })
     };
-    console.log("in adunit.service.ts addUser func")
     const obj = {
       email: email,
       password: password,

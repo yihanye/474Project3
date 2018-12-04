@@ -47,7 +47,7 @@
       </div>
       
       <div class="form-group">
-        <button (click)="addUser(email.value, firstName.value, lastName.value, password.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Register</button>
+        <button (click)="addUser(email.value, firstName.value, lastName.value, password.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary"><a routerLink="../login">Register</a></button>
       </div>
     </form>
   </div>
